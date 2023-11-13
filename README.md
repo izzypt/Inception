@@ -9,6 +9,9 @@ machine.
 
 This project consists in having you set up a small infrastructure composed of different services under specific rules. 
 
+![image](https://github.com/izzypt/Inception/assets/73948790/d3f35a1a-3b7a-4c5d-b40f-b597907e83e6)
+
+
 The whole project has to be done in a virtual machine. 
 - You have to use docker compose.
 - Each Docker image must have the same name as its corresponding service.
