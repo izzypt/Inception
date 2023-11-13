@@ -16,7 +16,7 @@ The whole project has to be done in a virtual machine.
 - You have to use docker compose.
 - Each Docker image must have the same name as its corresponding service.
 - Each service has to run in a dedicated container.
-- For performance matters, the containers must be built either from the penultimate stable version of Alpine or Debian. The choice is yours.
+- For performance matters, the containers must be built either from the penultimate stable version of Alpine or Debian.
 - You also have to write your own Dockerfiles, one per service.
 - The Dockerfiles must be called in your docker-compose.yml by your Makefile.
 - It means you have to build yourself the Docker images of your project.
@@ -36,3 +36,7 @@ The whole project has to be done in a virtual machine.
   
   • A docker-network that establishes the connection between your containers.
   
+ - In your WordPress database, there must be two users, one of them being the administrator. The administrator’s username can’t contain admin/Admin or administrator/Administrator (e.g., admin, administrator, Administrator, admin-123, and so forth).
+
+ - You have to configure your domain name so it points to your local IP address. This domain name must be login.42.fr.
+   > For example, if your login is wil, wil.42.fr will redirect to the IP address pointing to wil’s website
