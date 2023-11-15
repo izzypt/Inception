@@ -40,3 +40,26 @@ The whole project has to be done in a virtual machine.
 
  - You have to configure your domain name so it points to your local IP address. This domain name must be login.42.fr.
    > For example, if your login is wil, wil.42.fr will redirect to the IP address pointing to wil’s website
+
+# NGINX
+
+nginx is one of the first services we need to set up. Let's talk about what it is and what we will use it for:
+
+
+nginx [engine x] is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP proxy server, originally written by Igor Sysoev. 
+
+For a long time, it has been running on many heavily loaded Russian sites including Yandex, Mail.Ru, VK, and Rambler. 
+
+According to Netcraft, nginx served or proxied 20.66% busiest sites in October 2023. Here are some of the success stories: Dropbox, Netflix, Wordpress.com, FastMail.FM.
+
+### Basic HTTP server features
+- Serving static and index files, autoindexing; open file descriptor cache;
+- Accelerated reverse proxying with caching; load balancing and fault tolerance;
+- Accelerated support with caching of FastCGI, uwsgi, SCGI, and memcached servers; load balancing and fault tolerance;
+- Modular architecture. Filters include gzipping, byte ranges, chunked responses, XSLT, SSI, and image transformation filter. Multiple SSI inclusions within a single page can be processed in parallel if they are handled by proxied or - FastCGI/uwsgi/SCGI servers;
+- SSL and TLS SNI support;
+- Support for HTTP/2 with weighted and dependency-based prioritization;
+- Support for HTTP/3.
+
+
+
