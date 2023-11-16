@@ -47,6 +47,8 @@ Docker can package up applications along with their necessary operating system d
 
 In the long run it has the potential to be the abstraction layer that easily manages containers running on top of any type of server, regardless of whether that server is on Amazon Web Services, Google Compute Engine, Linode, Rackspace or elsewhere.
 
+https://www.fullstackpython.com/docker.html
+
 # What is a container?
 
 A container is a sandboxed process running on a host machine that is isolated from all other processes running on that host machine. To summarize, a container:
