@@ -42,6 +42,11 @@ The whole project has to be done in a virtual machine.
  - You have to configure your domain name so it points to your local IP address. This domain name must be login.42.fr.
    > For example, if your login is wil, wil.42.fr will redirect to the IP address pointing to wil’s website
 
+# Why is Docker important?
+Docker can package up applications along with their necessary operating system dependencies for easier deployment across environments. 
+
+In the long run it has the potential to be the abstraction layer that easily manages containers running on top of any type of server, regardless of whether that server is on Amazon Web Services, Google Compute Engine, Linode, Rackspace or elsewhere.
+
 # What is a container?
 
 A container is a sandboxed process running on a host machine that is isolated from all other processes running on that host machine. To summarize, a container:
