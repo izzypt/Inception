@@ -65,6 +65,21 @@ This isolated filesystem is provided by an image, and the image must contain eve
 
 The image also contains other configurations for the container, such as environment variables, a default command to run, and other metadata.
 
+# Web Servers
+Web servers respond to Hypertext Transfer Protocol (HTTP) requests from clients and send back a response containing a status code and often content such as HTML, XML or JSON as well.
+
+# Why are web servers necessary?
+Web servers are the ying to the web client's yang. The server and client speak the standardized language of the World Wide Web. This standard language is why an old Mozilla Netscape browser can still talk to a modern Apache or Nginx web server, even if it cannot properly render the page design like a modern web browser can.
+
+The basic language of the Web with the request and response cycle from client to server then server back to client remains the same as it was when the Web was invented by Tim Berners-Lee at CERN in 1989. Modern browsers and web servers have simply extended the language of the Web to incorporate new standards.
+
+# Web server implementations
+The conceptual web server idea can be implemented in various ways. The following web server implementations each have varying features, extensions and configurations.
+
+The Apache HTTP Server has been the most commonly deployed web server on the Internet for 20+ years.
+
+Nginx is the second most commonly used server for the top 100,000 websites and often serves as a reverse proxy for Python WSGI servers.
+
 # NGINX
 
 nginx is one of the first services we need to set up. Let's talk about what it is and what we will use it for:
