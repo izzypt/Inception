@@ -10,7 +10,7 @@ machine.
 
 This project consists in having you set up a small infrastructure composed of different services under specific rules. 
 
-![image](https://github.com/izzypt/Inception/assets/73948790/d3f35a1a-3b7a-4c5d-b40f-b597907e83e6)
+![image](https://github.com/izzypt/Inception/assets/73948790/d3f35a1a-3b7a-4c5d-b40f-b597907e83e6 and https://www.educative.io/blog/docker-compose-tutorial)
 
 
 The whole project has to be done in a virtual machine. 
