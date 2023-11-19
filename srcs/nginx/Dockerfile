@@ -1,28 +1,19 @@
-# This Dockerfile generates SSL/TLS certificates, 
-# copies a script to handle certificate setup,  
+FROM alpine:3.13
 
-FROM debian:buster
+RUN	apk update && apk upgrade && apk add --no-cache \
+        nginx \
+        openssl
 
-# Install NGINX
-RUN apt-get update && \
-    apt-get install -y nginx
+# nginx SSL
+RUN mkdir /etc/nginx/ssl
+RUN openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes \
+        -out /etc/nginx/ssl/raccoman.pem \
+        -keyout /etc/nginx/ssl/raccoman.key \
+        -subj "/C=IT/ST=Rome/L=Rome/O=42 School/OU=raccoman/CN=raccoman/"
 
-# Generate SSL/TLS Certificate
-RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
-    -keyout /etc/ssl/private/aouhadou.key \
-    -out /etc/ssl/certs/aouhadou.crt \
-    -subj="/C=MA/ST=khouribga/L=khouribga/O=1337 School/OU=aouhadou/CN=aouhadou.42.fr"
+# nginx config
+RUN mkdir -p /run/nginx
+COPY conf/nginx.conf /etc/nginx/conf.d/default.conf
 
-# Copy Certificate Generation Script
-COPY ./tools/certs.sh /tmp/certs.sh
-
-# Set Execute Permissions for the Script
-RUN chmod +x /tmp/certs.sh
-
-# Copy NGINX Configuration
-COPY ./conf/default /etc/nginx/sites-available/default
-
-EXPOSE  443
-
-# Set NGINX as the Entry Point
+# Start nginx
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
