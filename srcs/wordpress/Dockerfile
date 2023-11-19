@@ -4,7 +4,6 @@ RUN	apk update && apk upgrade && apk add --no-cache \
 		wget				\
         tar                 \
 		mariadb-client		\
-		redis				\
 		# Wordpress core depencencies
 		php7				\
 		php7-fpm			\
