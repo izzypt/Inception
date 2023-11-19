@@ -24,7 +24,6 @@ services:
       - "~/Desktop/inception/website:/var/www/html"
     depends_on:
       - mariadb
-      - redis
     networks:
       - frontend
       - backend
@@ -42,8 +41,6 @@ services:
       WP_USR:           ${WP_USR}
       WP_PWD:           ${WP_PWD}
       WP_EMAIL:         ${WP_EMAIL}
-      REDIS_HOST:       ${REDIS_HOST}
-      REDIS_PWD:        ${REDIS_PWD}
 
   mariadb:
     build: requirements/mariadb/
