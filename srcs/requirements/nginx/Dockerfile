@@ -9,7 +9,7 @@ RUN mkdir /etc/nginx/ssl
 RUN openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes \
         -out /etc/nginx/ssl/raccoman.pem \
         -keyout /etc/nginx/ssl/raccoman.key \
-        -subj "/C=IT/ST=Rome/L=Rome/O=42 School/OU=raccoman/CN=raccoman/"
+        -subj "/C=PT/ST=Lisboa/L=Lisboa/O=42 School/OU=smagalha/CN=smagalha/"
 
 # nginx config
 RUN mkdir -p /run/nginx
