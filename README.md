@@ -229,3 +229,37 @@ This server will filter requests ending with .gif, .jpg, or .png and map them to
 To apply new configuration, send the reload signal to nginx as described in the previous sections.
 
 There are many more directives that may be used to further configure a proxy connection.
+
+# Docker Network
+
+Docker networks provide a communication bridge between different Docker containers, allowing them to talk to each other securely. 
+
+A Docker network enables isolated environments for containers, helping with better organization and management of containerized applications.
+
+Here's a simple explanation:
+
+    Isolation:
+        Docker containers running on the same network can communicate with each other, but they are isolated from containers on other networks.
+
+    Default Bridge Network:
+        When you run a Docker container without specifying a network, it is connected to the default bridge network. Containers on the same bridge network can communicate with each other using IP addresses.
+
+    User-Defined Networks:
+        Docker allows you to create custom, user-defined networks. Containers connected to the same custom network can communicate with each other using container names as hostnames.
+
+    Scalability and Flexibility:
+        Docker networks make it easy to scale applications. For example, if you have a web application and a database, you can run them in separate containers on the same network.
+
+    Container Discovery:
+        Containers on the same network can discover and communicate with each other using service names or container names as if they were hostnames.
+
+    Security:
+        Docker networks provide a level of security by isolating communication between containers. Containers on different networks usually cannot communicate with each other directly.
+
+    Bridge, Overlay, and Host Networks:
+        Docker supports various types of networks, including bridge networks (default), overlay networks for multi-host communication, and host networks where containers share the host's network stack.
+
+    Network Drivers:
+        Docker supports different network drivers that determine how containers on a network communicate. The default is the bridge driver, but you can also use overlay, macvlan, and others based on your specific requirements.
+
+In essence, Docker networks are a crucial part of managing and organizing containerized applications, providing a way for containers to communicate, share data, and work together in a controlled and secure manner. They contribute to the flexibility and scalability of containerized architectures.
