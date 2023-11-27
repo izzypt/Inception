@@ -71,6 +71,8 @@ Compared to a virtual machine, a container typically takes up less space and con
 
 In contrast, with a virtual machine, everything running inside the VM is independent of the host operating system, or hypervisor.
 
+What’s fundamentally different with a virtual machine is that at start time, it boots a new, dedicated kernel for this VM environment, and starts a (often rather large) set of operating system processes. This makes the size of the VM much larger than a typical container that only contains the application.
+
 # What is an image?
 
 A running container uses an isolated filesystem. 
