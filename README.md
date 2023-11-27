@@ -58,6 +58,11 @@ A container is a sandboxed process running on a host machine that is isolated fr
   - Is portable (and can be run on any OS).
   - Is isolated from other containers and runs its own software, binaries, configurations, etc.
 
+# Benefit of Docker over VM
+
+Because Docker containers share many of their resources with the host system, they require fewer things to be installed in order to run. 
+
+Compared to a virtual machine, a container typically takes up less space and consumes less RAM and CPU time
 
 # What is an image?
 
