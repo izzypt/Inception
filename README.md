@@ -103,12 +103,12 @@ Here's a simple explanation:
 
   ### Bridge, Overlay, and Host Networks:
   
-      - Docker supports various types of networks, including bridge networks (default), overlay networks for multi-host communication, and host networks where containers share the host's network stack.
+  - Docker supports various types of networks, including bridge networks (default), overlay networks for multi-host communication, and host networks where containers share the host's network stack.
 
   ### Network Drivers:
   
-      - Docker supports different network drivers that determine how containers on a network communicate. 
-      - The default is the bridge driver, but you can also use overlay, macvlan, and others based on your specific requirements.
+  - Docker supports different network drivers that determine how containers on a network communicate. 
+  - The default is the bridge driver, but you can also use overlay, macvlan, and others based on your specific requirements.
 
 In essence, Docker networks are a crucial part of managing and organizing containerized applications, providing a way for containers to communicate, share data, and work together in a controlled and secure manner. They contribute to the flexibility and scalability of containerized architectures.
 
