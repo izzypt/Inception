@@ -60,9 +60,16 @@ A container is a sandboxed process running on a host machine that is isolated fr
 
 # Benefit of Docker over VM
 
-Because Docker containers share many of their resources with the host system, they require fewer things to be installed in order to run. 
+Docker containers and virtual machines are both ways of deploying applications inside environments that are isolated from the underlying hardware: 
+ - The chief difference is the level of isolation.
+
+Docker containers share many of their resources with the host system, they require fewer things to be installed in order to run. 
+
+Containers share the same kernel on the same host. As a result, processes running inside containers are visible from the host system (given enough privileges for listing all).
 
 Compared to a virtual machine, a container typically takes up less space and consumes less RAM and CPU time
+
+In contrast, with a virtual machine, everything running inside the VM is independent of the host operating system, or hypervisor.
 
 # What is an image?
 
