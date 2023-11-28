@@ -269,6 +269,7 @@ Directives placed in the configuration file outside of any contexts are consider
 
 The rest of a line after the # sign is considered a comment.
 
+How to create nginx config file -> https://www.youtube.com/watch?v=NEf3CFjN0Dg
 
 ### Serving Static Content
 
