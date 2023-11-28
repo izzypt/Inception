@@ -59,7 +59,17 @@ services:
 
 volumes:
   website-data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/simao/data/wordpress
   mariadb-data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/simao/data/mariadb
 
 networks:
   frontend:
