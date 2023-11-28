@@ -1,17 +1,19 @@
 # Inception
 This document is a System Administration related exercise.
 
-# Index
+# List of Contents
 
-- Introduction
-- Why is Docker important?
-- What is a container?
-- What is an image?
-- Docker vs VM (Virtual Machine)
-- What are volumes
-- What is the Docker Network
+- [Introduction](#intro)
+- [Why is Docker important?](#docker)
+- [What is a container?](#docker)
+- [What is an image?](#image)
+- [Docker vs VM (Virtual Machine)](#dockervsvm)
+- [What are volumes](#volumes)
+- [What is the Docker Network](#network)
+- [Web Servers](#web)
+- [NGINX](#nginx)
 
-
+<a id="intro"></a>
 # Introduction <h6>(https://docs.docker.com/get-started/ and  https://www.educative.io/blog/docker-compose-tutorial)</h6>
 
 This project aims to broaden your knowledge of system administration by using Docker.
@@ -53,6 +55,7 @@ The whole project has to be done in a virtual machine.
  - You have to configure your domain name so it points to your local IP address. This domain name must be login.42.fr.
    > For example, if your login is wil, wil.42.fr will redirect to the IP address pointing to wil’s website
 
+<a id="docker"></a>
 # Why is Docker important?
 Docker can package up applications along with their necessary operating system dependencies for easier deployment across environments. 
 
@@ -60,6 +63,7 @@ In the long run it has the potential to be the abstraction layer that easily man
 
 https://www.fullstackpython.com/docker.html
 
+<a id="container"></a>
 # What is a container?
 
 A container is a sandboxed process running on a host machine that is isolated from all other processes running on that host machine. To summarize, a container:
@@ -69,6 +73,7 @@ A container is a sandboxed process running on a host machine that is isolated fr
   - Is portable (and can be run on any OS).
   - Is isolated from other containers and runs its own software, binaries, configurations, etc.
 
+<a id="image"></a>
 # What is an image?
 
 A running container uses an isolated filesystem. 
@@ -77,6 +82,7 @@ This isolated filesystem is provided by an image, and the image must contain eve
 
 The image also contains other configurations for the container, such as environment variables, a default command to run, and other metadata.
 
+<a id="dockervsvm"></a>
 # Docker vs VM (Virtual Machine)
 
 Docker containers and virtual machines are both ways of deploying applications inside environments that are isolated from the underlying hardware: 
@@ -92,6 +98,7 @@ In contrast, with a virtual machine, everything running inside the VM is indepen
 
 What’s fundamentally different with a virtual machine is that at start time, it boots a new, dedicated kernel for this VM environment, and starts a (often rather large) set of operating system processes. This makes the size of the VM much larger than a typical container that only contains the application.
 
+<a id="volumes"></a>
 #  What are volumes
 
 Whenever we run a container based on an image ( e.g. running a database in container) and have generated some data, if we remove that container the data will no longer be accessible to us. 
@@ -163,8 +170,7 @@ In this example, my-named-volume is a named volume, and /host/path is a bind mou
 Remember that named volumes are managed by Docker, and you can inspect them using docker volume ls and docker volume inspect <volume_name>. Bind mounts, on the other hand, directly reference paths on the host machine.
 
 
-
-
+<a id="network"></a>
 # What is the Docker Network
 
 Docker networks provide a communication bridge between different Docker containers, allowing them to talk to each other securely. 
@@ -210,6 +216,7 @@ Here's a simple explanation:
 
 In essence, Docker networks are a crucial part of managing and organizing containerized applications, providing a way for containers to communicate, share data, and work together in a controlled and secure manner. They contribute to the flexibility and scalability of containerized architectures.
 
+<a id="web"></a>
 # Web Servers
 Web servers respond to Hypertext Transfer Protocol (HTTP) requests from clients and send back a response containing a status code and often content such as HTML, XML or JSON as well.
 
@@ -225,6 +232,7 @@ The Apache HTTP Server has been the most commonly deployed web server on the Int
 
 Nginx is the second most commonly used server for the top 100,000 websites and often serves as a reverse proxy for Python WSGI servers.
 
+<a id="nginx"></a>
 # NGINX
 
 nginx is one of the first services we need to set up. Let's talk about what it is and what we will use it for:
