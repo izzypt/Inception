@@ -1,6 +1,6 @@
 # 1) Command to get into the DB
 
-  docker exec -it mariadb mysql -h mariadb -u smagalha -p
+  docker exec -it mariadb mysql -h $(MYSQL_HOST) -u $(WP_DATABASE_USR) -p
 
 # 2) Check the existing DB'S and selected the wordpress DB.
 
