@@ -11,7 +11,7 @@ services:
     depends_on:
       - wordpress
     networks:
-      - frontend
+      - inception
     restart: always
 
   wordpress:
@@ -24,8 +24,7 @@ services:
     depends_on:
       - mariadb
     networks:
-      - frontend
-      - backend
+      - inception
     restart: always
     environment:
       MYSQL_HOST:       ${MYSQL_HOST}
@@ -49,7 +48,7 @@ services:
     volumes:
       - mariadb-data:/var/lib/mysql
     networks:
-      - backend
+      - inception
     restart: always
     environment:
       MYSQL_ROOT_PWD:   ${MYSQL_ROOT_PWD}
@@ -72,5 +71,5 @@ volumes:
       device: /home/simao/data/mariadb
 
 networks:
-  frontend:
-  backend:
+  inception:
+  #backend:
