@@ -7,6 +7,7 @@ This document is a System Administration related exercise.
 - [Why is Docker important?](#docker)
 - [What is a container?](#docker)
 - [What is an image?](#image)
+- [Difference between Dockerfile and Docker Compose](#compose)
 - [Docker vs VM (Virtual Machine)](#dockervsvm)
 - [What are volumes](#volumes)
 - [What is the Docker Network](#network)
@@ -81,6 +82,13 @@ A running container uses an isolated filesystem.
 This isolated filesystem is provided by an image, and the image must contain everything needed to run an application - all dependencies, configurations, scripts, binaries, etc. 
 
 The image also contains other configurations for the container, such as environment variables, a default command to run, and other metadata.
+
+<a id="compose"></a>
+# Difference between Dockerfile and Docker Compose
+
+The key difference between the Dockerfile and docker-compose is that the Dockerfile describes how to build Docker images, while docker-compose is used to run Docker containers.
+
+The contents of a Dockerfile describe how to create and build a Docker image, while docker-compose is a command that runs Docker containers based on settings described in a docker-compose.yaml file.
 
 <a id="dockervsvm"></a>
 # Docker vs VM (Virtual Machine)
