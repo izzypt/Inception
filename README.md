@@ -241,10 +241,10 @@ The Apache HTTP Server has been the most commonly deployed web server on the Int
 Nginx is the second most commonly used server for the top 100,000 websites and often serves as a reverse proxy for Python WSGI servers.
 
 <a id="nginx"></a>
-# NGINX
+# NGINX 
 
 nginx is one of the first services we need to set up. Let's talk about what it is and what we will use it for:
-
+(https://www.digitalocean.com/community/tutorials/understanding-nginx-server-and-location-block-selection-algorithms)
 
 nginx [engine x] is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP proxy server, originally written by Igor Sysoev. 
 
