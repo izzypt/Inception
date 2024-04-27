@@ -11,6 +11,7 @@ This document is a System Administration related exercise.
 - [Docker vs VM (Virtual Machine)](#dockervsvm)
 - [What are volumes](#volumes)
 - [What is the Docker Network](#network)
+- [Docker commands](#commands)
 - [Web Servers](#web)
 - [NGINX](#nginx)
 
@@ -223,6 +224,61 @@ Here's a simple explanation:
   - The default is the bridge driver, but you can also use overlay, macvlan, and others based on your specific requirements.
 
 In essence, Docker networks are a crucial part of managing and organizing containerized applications, providing a way for containers to communicate, share data, and work together in a controlled and secure manner. They contribute to the flexibility and scalability of containerized architectures.
+
+<a id="commands"></a>
+# Docker commands
+
+A list of commonly used docker comands:
+
+  - ```docker run```: Create and start a new container from an image.
+
+  - ```docker build```: Build a Docker image from a Dockerfile.
+
+  - ```docker pull```: Pull an image or a repository from a registry.
+
+  - ```docker push```: Push an image or a repository to a registry.
+
+  - ```docker ps```: List running containers.
+
+  - ```docker ps -a```: List all containers, including stopped ones.
+
+  - ```docker exec```: Run a command inside a running container.
+
+  - ```docker stop```: Stop one or more running containers.
+
+  - ```docker start```: Start one or more stopped containers.
+
+  - ```docker restart```: Restart one or more containers.
+
+  - ```docker rm```: Remove one or more containers.
+
+  - ```docker rmi```: Remove one or more images.
+
+  - ```docker images```: List available images on the local system.
+
+  - ```docker inspect```: Display detailed information about one or more containers, images, networks, or volumes.
+
+  - ```docker-compose up```: Create and start containers defined in the docker-compose.yml file.
+
+  - ```docker-compose down```: Stop and remove containers, networks, and volumes defined in the docker-compose.yml file.
+
+  - ```docker network ls```: List Docker networks.
+
+  - ```docker volume ls```: List Docker volumes.
+
+### ```docker run``` vs ```docker exec```
+
+  - docker run:
+    - This command is used to create a new container from a Docker image and then run a command inside that container.
+    - It's typically used to start new containers.
+    - When you use docker run, Docker creates a new container based on the specified image and then executes the command you provide within that container. If the container is already running, docker run will start another instance of the specified image.
+
+- docker exec:
+  - This command is used to run a command inside an existing, running container.
+  - It allows you to execute commands within a container that is already running.
+  - Unlike docker run, which creates a new container instance, docker exec works on an existing container that has already been created and started.
+
+- In summary, docker run is used to start new containers, while docker exec is used to execute commands within existing containers.
 
 <a id="web"></a>
 # Web Servers
