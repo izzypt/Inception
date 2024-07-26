@@ -282,8 +282,22 @@ A list of commonly used docker comands:
 - In summary, docker run is used to start new containers, while docker exec is used to execute commands within existing containers.
 
 <a id="ports"></a>
-
 # Container Port vs Host Port
+
+In Docker, the concepts of container port and host port are key to understanding how network traffic is routed to your containerized applications:
+
+- **Container Port**: This is the port number that your application inside the container listens to. It is defined within the Docker container.
+
+- **Host Port**: This is the port number on the host machine (the physical or virtual machine running Docker) that is mapped to the container port. This allows external systems or users to access the application running inside the container.
+
+When you run a Docker container, you can map a host port to a container port using the `-p` flag. 
+
+For example, `-p 8080:80` maps port `8080` on the host to port `80` in the container. 
+
+This means that if you access `http://localhost:8080` on the host machine, the request will be forwarded to the application running on port 80 inside the container.
+
+<img width="1546" alt="image" src="https://github.com/user-attachments/assets/2835b119-899c-404e-b622-4b2cb496be11">
+
 
 <a id="web"></a>
 # Web Servers
