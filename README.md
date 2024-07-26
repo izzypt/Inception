@@ -12,6 +12,7 @@ This document is a System Administration related exercise.
 - [What are volumes](#volumes)
 - [What is the Docker Network](#network)
 - [Docker commands](#commands)
+- [Container Port vs Host Port](#ports)
 - [Web Servers](#web)
 - [NGINX](#nginx)
 
@@ -279,6 +280,10 @@ A list of commonly used docker comands:
   - Unlike docker run, which creates a new container instance, docker exec works on an existing container that has already been created and started.
 
 - In summary, docker run is used to start new containers, while docker exec is used to execute commands within existing containers.
+
+<a id="ports"></a>
+
+# Container Port vs Host Port
 
 <a id="web"></a>
 # Web Servers
