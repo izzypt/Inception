@@ -11,8 +11,8 @@ This document is a System Administration related exercise.
 - [Docker vs VM (Virtual Machine)](#dockervsvm)
 - [What are volumes](#volumes)
 - [What is the Docker Network](#network)
-- [Docker commands](#commands)
 - [Container Port vs Host Port](#ports)
+- [Docker commands](#commands)
 - [Web Servers](#web)
 - [NGINX](#nginx)
 
