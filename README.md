@@ -183,7 +183,16 @@ Remember that named volumes are managed by Docker, and you can inspect them usin
 <a id="network"></a>
 # What is the Docker Network
 
-Docker networks provide a communication bridge between different Docker containers, allowing them to talk to each other securely. 
+Docker networks provide a communication bridge between different Docker containers, allowing them to talk to each other securely.
+
+Example:
+
+When I deploy two containers on the same docker network , in this case - mongo and mongo express- they can talk to each other only using the ***container name*** because they are in the same network. 
+
+And the apps that run outside of Docker like this nodeJS, is gonna connect to them using localhost or the port number:
+
+<img width="1184" alt="image" src="https://github.com/user-attachments/assets/5aa8f941-8f2a-4907-92a2-d34575da50b8">
+
 
 A Docker network enables isolated environments for containers, helping with better organization and management of containerized applications.
 
