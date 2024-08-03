@@ -235,6 +235,10 @@ Here's a simple explanation:
 
 In essence, Docker networks are a crucial part of managing and organizing containerized applications, providing a way for containers to communicate, share data, and work together in a controlled and secure manner. They contribute to the flexibility and scalability of containerized architectures.
 
+Docker has 7 types of network, this video explains more about each one:
+
+- https://www.youtube.com/watch?v=bKFMS5C4CG0
+
 <a id="commands"></a>
 # Docker commands
 
