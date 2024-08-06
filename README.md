@@ -346,6 +346,14 @@ According to Netcraft, nginx served or proxied 20.66% busiest sites in October 2
 
 ![image](https://github.com/user-attachments/assets/4262c842-e855-49e9-b2db-1ac21fb7db1e)
 
+![image](https://github.com/user-attachments/assets/ffa850a2-261b-4e0e-b0d6-9ffea5ed5beb)
+
+![image](https://github.com/user-attachments/assets/e6c62875-59a6-4406-8769-9f0a0676265a)
+
+![image](https://github.com/user-attachments/assets/7dba0477-5f88-409d-aad4-562e7e2eabbe)
+
+
+
 
 ### Basic HTTP server features
 - Serving static and index files, autoindexing; open file descriptor cache;
