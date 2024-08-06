@@ -331,6 +331,8 @@ Nginx is the second most commonly used server for the top 100,000 websites and o
 <a id="nginx"></a>
 # NGINX 
 
+https://www.youtube.com/watch?v=iInUBOVeBCc&t=22s
+
 nginx is one of the first services we need to set up. Let's talk about what it is and what we will use it for:
 (https://www.digitalocean.com/community/tutorials/understanding-nginx-server-and-location-block-selection-algorithms)
 
@@ -339,6 +341,11 @@ nginx [engine x] is an HTTP and reverse proxy server, a mail proxy server, and a
 For a long time, it has been running on many heavily loaded Russian sites including Yandex, Mail.Ru, VK, and Rambler. 
 
 According to Netcraft, nginx served or proxied 20.66% busiest sites in October 2023. Here are some of the success stories: Dropbox, Netflix, Wordpress.com, FastMail.FM.
+
+![image](https://github.com/user-attachments/assets/2a271e65-2f83-4d3d-b5e7-87ff01433636)
+
+![image](https://github.com/user-attachments/assets/4262c842-e855-49e9-b2db-1ac21fb7db1e)
+
 
 ### Basic HTTP server features
 - Serving static and index files, autoindexing; open file descriptor cache;
