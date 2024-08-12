@@ -16,6 +16,10 @@ This document is a System Administration related exercise.
 - [Web Servers](#web)
 - [NGINX](#nginx)
 
+# Another questions/problems I ran into later in development life
+
+- [Multi-Stage builds and --target](#multistage)
+
 <a id="intro"></a>
 # Introduction <h6>(https://docs.docker.com/get-started/ and  https://www.educative.io/blog/docker-compose-tutorial)</h6>
 
@@ -492,3 +496,66 @@ This server will filter requests ending with .gif, .jpg, or .png and map them to
 To apply new configuration, send the reload signal to nginx as described in the previous sections.
 
 There are many more directives that may be used to further configure a proxy connection.
+
+
+<a id="multistage"></a>
+# Multi-Stage builds and --target
+
+The `--target` flag in Docker is used in the context of multi-stage builds within a Dockerfile. When you have a Dockerfile with multiple build stages, the `--target` option allows you to specify which stage you want to build up to.
+
+### Multi-Stage Builds
+
+In a multi-stage build, you can define multiple `FROM` instructions within a single Dockerfile. Each `FROM` instruction starts a new build stage, and you can use different base images or configurations for each stage. Typically, you might use one stage to build your application and another to package the final, optimized image.
+
+### The `--target` Flag
+
+The `--target` flag allows you to stop the build process at a specific stage and output the image created up to that point. This can be useful when you only want to build an intermediate stage for debugging or if you have different targets for development, testing, and production.
+
+### Example
+
+Here’s a simplified example Dockerfile with multi-stage builds:
+
+```dockerfile
+# Stage 1: Build
+FROM golang:1.18 AS builder
+WORKDIR /app
+COPY . .
+RUN go build -o myapp .
+
+# Stage 2: Production Image
+FROM alpine:latest AS prod_image
+WORKDIR /app
+COPY --from=builder /app/myapp .
+CMD ["./myapp"]
+
+# Stage 3: Debug Image
+FROM alpine:latest AS debug_image
+WORKDIR /app
+COPY --from=builder /app/myapp .
+RUN apk add --no-cache bash
+CMD ["bash"]
+```
+
+In this example, there are three stages:
+1. **builder**: Compiles the Go application.
+2. **prod_image**: Copies the compiled binary from the builder stage to a lightweight Alpine image, creating a minimal production image.
+3. **debug_image**: Similar to the production image, but includes a shell for debugging.
+
+### Using the `--target` Flag
+
+If you want to build the production image only, you would use the `--target` flag:
+
+```bash
+docker build --target prod_image -t myapp:prod .
+```
+
+- **`--target prod_image`**: Instructs Docker to build only up to the `prod_image` stage.
+- **`-t myapp:prod`**: Tags the resulting image as `myapp:prod`.
+
+Similarly, you could build the debug image like this:
+
+```bash
+docker build --target debug_image -t myapp:debug .
+```
+
+This flexibility allows you to have different build targets for various purposes (e.g., production, testing, debugging) within a single Dockerfile.
