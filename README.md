@@ -569,8 +569,8 @@ This flexibility allows you to have different build targets for various purposes
 
 If you want this image to appear under a specific tag, you can tag it manually:
 
-`sh
-docker tag c400271e778d nexus.eigen.live/generative_service:<desired_tag>
+`
+docker tag <image_id> nexus.eigen.live/generative_service:<desired_tag>
 `
 
 Replace <desired_tag> with the tag name you prefer. After doing this, running docker images will show the image with the tag you've assigned.
