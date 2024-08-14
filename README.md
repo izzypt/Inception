@@ -19,6 +19,7 @@ This document is a System Administration related exercise.
 # Another questions/problems I ran into later in development life
 
 - [Multi-Stage builds and --target](#multistage)
+- [Tagging and saving image](#tagandsave)
 
 <a id="intro"></a>
 # Introduction <h6>(https://docs.docker.com/get-started/ and  https://www.educative.io/blog/docker-compose-tutorial)</h6>
@@ -559,3 +560,77 @@ docker build --target debug_image -t myapp:debug .
 ```
 
 This flexibility allows you to have different build targets for various purposes (e.g., production, testing, debugging) within a single Dockerfile.
+
+<a id="tagandsave"></a>
+
+# Tagging and saving image
+
+### Tagging the Image:
+
+If you want this image to appear under a specific tag, you can tag it manually:
+
+`sh
+docker tag c400271e778d nexus.eigen.live/generative_service:<desired_tag>
+`
+
+Replace <desired_tag> with the tag name you prefer. After doing this, running docker images will show the image with the tag you've assigned.
+
+### Saving the Image:
+
+To save your Docker image to a `.tar` file, you can use the `docker save` command. This command exports the image into a tarball, which you can then transfer or store as needed.
+
+Here’s how you can do it:
+
+1. **Use `docker save` to Export the Image**
+
+   Run the following command, replacing `<image_id>` with the ID of the image you want to save and `<file_name>.tar` with your desired filename:
+
+   ```bash
+   docker save -o <file_name>.tar <image_id>
+   ```
+
+   In your case, the command would be:
+
+   ```bash
+   docker save -o generative_service_image.tar c400271e778d
+   ```
+
+   This command will create a file named `generative_service_image.tar` in your current directory containing the image.
+
+2. **Verify the Tarball**
+
+   After saving the image, you can list the files in your directory to ensure that the tarball has been created:
+
+   ```bash
+   ls -l generative_service_image.tar
+   ```
+
+   You can also inspect the tarball to verify its contents:
+
+   ```bash
+   tar -tf generative_service_image.tar
+   ```
+
+### Additional Tips
+
+- **Compress the Tarball**: If you want to save space, you can compress the tarball using `gzip`:
+
+  ```bash
+  gzip generative_service_image.tar
+  ```
+
+  This will create a `generative_service_image.tar.gz` file.
+
+- **Load the Image from Tarball**: To load the saved image back into Docker on another system or after cleaning up, use:
+
+  ```bash
+  docker load -i <file_name>.tar
+  ```
+
+  For example:
+
+  ```bash
+  docker load -i generative_service_image.tar
+  ```
+
+This process allows you to export and import Docker images as needed, facilitating image transfer and backup.
